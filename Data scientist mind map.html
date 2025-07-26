@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Syllabus Tree Map</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: 'Roboto', Arial, sans-serif; 
+    margin: 0;
+    min-height: 50%;
+    height: 100%;
+    background: linear-gradient(120deg, #e4e6f7dd 0%, #e0f0ffcc 55%, #fad0c466 100%),
+    url('image-2.png') center center no-repeat;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center center;
+        background-blend-mode: darken;
+          }
+    .tree {
+      padding:34px;
+      margin: 44px auto;
+    }
+    .tree:before {
+      /* A soft glowing border */
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 28px;
+      background: radial-gradient(circle 350px at 80% 10%,
+                      #afd1fe40 0%, #fff0 90%),
+                  radial-gradient(ellipse 400px 150px at 10% 120%,
+                      #e2dfff60 0%, #fff0 90%);
+      z-index: 0;
+      pointer-events: none;
+    }
+ .tree ul { padding-left: 24px; margin:0; position: relative; z-index: 1;}
+    .tree li { list-style-type: none; margin:0 0 0 24px; padding: 12px 6px 0 8px; position:relative; transition:background 0.2s; border-radius:8px;}
+    .tree li::before {
+      content: '';
+      position: absolute; left: -16px; top: 20px; border-left: 2px solid #a0c8f8;
+      height: 100%;
+    }
+    .tree li:last-child::before { height: 28px;}
+    .tree .main, .tree .sub { font-weight: bold;}
+    .tree .main {
+      background: linear-gradient(90deg, #4b83d7, #82e6e4);
+       padding: 10px 20px; border-radius:30px; margin-bottom:7px;
+      display:inline-block; 
+      letter-spacing: 1.2px;
+    }
+    .tree .sub {
+      background: linear-gradient(85deg, #e3f1ff, #aff5df 70%);
+      color: #2b5577; padding: 8px 15px; border-radius:16px; display:inline-block;
+      margin-bottom:3px;
+      box-shadow:0 2px 7px #a7f0d660;
+      font-weight: bold;
+    }
+    .tree .topic {
+      background:#f4fbff; color:#326382; padding:7px 15px; border-radius:12px; display:inline-block; margin-top:2px;
+      border: 1px solid #e0f0ff;
+      transition: background 0.16s;
+    }
+    .tree .topic:hover {
+        transform: scale(1.01);
+  text-decoration: underline;
+      background: #dcf3ff;
+      color: #136789;
+    }
+    .tree ul ul {border-left: 1.5px dotted #c3dbf5;}
+    .tree .arrow {
+      display: inline-block;
+      width: 18px;
+      color: #31598c;
+      font-size: 1.11em;
+      font-family: "Arial Unicode MS", Arial, sans-serif;
+      vertical-align: middle;
+      transition: transform 0.24s;
+      cursor: pointer;
+      margin-right: 7px;
+      user-select: none;
+      text-shadow: 0 1px 9px #acf1e880;
+    }
+    .collapsed > span.toggle .arrow { transform: rotate(-90deg);}
+    .collapsed > ul { display: none;}
+    .selected {
+      box-shadow: none;
+      background: #d0e8ff;}
+    @media (max-width:700px) { .tree{padding:10px; max-width:99vw;} 
+  }
+  </style>
+</head>
+<body>
+<div class="tree">
+  <ul>
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>Data scientist mind map</span>
+        <ul>
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>Python</span>
+      <ul>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Basics</span>
+          <ul>
+            <li><span class="topic">Syntax & Variables</span></li>
+            <li><span class="topic">Data types (int, str, list, dict, tuple)</span></li>
+            <li><span class="topic">Input/output</span></li>
+            <li><span class="topic">Basic operators</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Control Flow</span>
+          <ul>
+            <li><span class="topic">If-else</span></li>
+            <li><span class="topic">For/while loops</span></li>
+            <li><span class="topic">List comprehensions</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Functions</span>
+          <ul>
+            <li><span class="topic">Defining functions, parameters</span></li>
+            <li><span class="topic">Return, lambdas</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>OOP</span>
+          <ul>
+            <li><span class="topic">Classes & objects</span></li>
+            <li><span class="topic">Inheritance</span></li>
+            <li><span class="topic">Encapsulation</span></li>
+            <li><span class="topic">Polymorphism</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Advanced</span>
+          <ul>
+            <li><span class="topic">Error handling (try/except)</span></li>
+            <li><span class="topic">File handling</span></li>
+            <li><span class="topic">Modules, packages</span></li>
+            <li><span class="topic">Decorators, generators</span></li>
+            <li><span class="topic">Virtual environments</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>Data Structures &amp; Algorithms (DSA)</span>
+      <ul>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Basic</span>
+          <ul>
+            <li><span class="topic">Arrays, lists</span></li>
+            <li><span class="topic">Stacks, queues</span></li>
+            <li><span class="topic">Strings</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Intermediate</span>
+          <ul>
+            <li><span class="topic">Linked lists</span></li>
+            <li><span class="topic">Trees (binary, BST)</span></li>
+            <li><span class="topic">Hash tables</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Algorithms</span>
+          <ul>
+            <li><span class="topic">Sorting (bubble, merge, quick, etc.)</span></li>
+            <li><span class="topic">Searching (linear, binary)</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Advanced</span>
+          <ul>
+            <li><span class="topic">Graphs (BFS, DFS)</span></li>
+            <li><span class="topic">Recursion</span></li>
+            <li><span class="topic">Dynamic programming (DP)</span></li>
+            <li><span class="topic">Greedy algorithms</span></li>
+            <li><span class="topic">Big O notation</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>SQL</span>
+      <ul>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Fundamentals</span>
+          <ul>
+            <li><span class="topic">Databases & tables</span></li>
+            <li><span class="topic">SQL data types</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Basic Commands</span>
+          <ul>
+            <li><span class="topic">SELECT queries</span></li>
+            <li><span class="topic">WHERE, ORDER BY, GROUP BY</span></li>
+            <li><span class="topic">INSERT, UPDATE, DELETE</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Intermediate</span>
+          <ul>
+            <li><span class="topic">JOINs (INNER, LEFT, RIGHT)</span></li>
+            <li><span class="topic">Aggregate functions (SUM, COUNT, AVG)</span></li>
+            <li><span class="topic">Subqueries</span></li>
+            <li><span class="topic">Views, indexes</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Advanced</span>
+          <ul>
+            <li><span class="topic">Stored procedures</span></li>
+            <li><span class="topic">Transactions</span></li>
+            <li><span class="topic">Triggers</span></li>
+            <li><span class="topic">Database optimization</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>Data Analysis</span>
+      <ul>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Getting Started</span>
+          <ul>
+            <li><span class="topic">Data import (CSV, Excel)</span></li>
+            <li><span class="topic">Cleaning (remove duplicates, missing values)</span></li>
+            <li><span class="topic">Filtering, sorting</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Exploration</span>
+          <ul>
+            <li><span class="topic">Descriptive stats (mean, median, std)</span></li>
+            <li><span class="topic">Visualization (hist, bar, line, scatter)</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Tools</span>
+          <ul>
+            <li><span class="topic">Excel basics</span></li>
+            <li><span class="topic">Pandas</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Intermediate</span>
+          <ul>
+            <li><span class="topic">Grouping, pivot tables</span></li>
+            <li><span class="topic">Correlation</span></li>
+            <li><span class="topic">Feature engineering</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Advanced</span>
+          <ul>
+            <li><span class="topic">Hypothesis testing</span></li>
+            <li><span class="topic">Time series basics</span></li>
+            <li><span class="topic">A/B testing</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>Data Engineering</span>
+      <ul>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Basics</span>
+          <ul>
+            <li><span class="topic">ETL concepts</span></li>
+            <li><span class="topic">Batch vs. stream processing</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Storage</span>
+          <ul>
+            <li><span class="topic">Relational databases</span></li>
+            <li><span class="topic">Cloud storage (AWS S3, GCP, Azure)</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Working with Data</span>
+          <ul>
+            <li><span class="topic">Formats (CSV, JSON, Parquet)</span></li>
+            <li><span class="topic">APIs</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Intermediate</span>
+          <ul>
+            <li><span class="topic">Job scheduling (cron, Airflow)</span></li>
+            <li><span class="topic">Data warehousing</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Advanced</span>
+          <ul>
+            <li><span class="topic">Big Data tools (Hadoop, Spark)</span></li>
+            <li><span class="topic">Pipeline monitoring</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>Data Science</span>
+      <ul>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Foundations</span>
+          <ul>
+            <li><span class="topic">What is data science</span></li>
+            <li><span class="topic">Stats basics (mean, variance, prob.)</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Programming</span>
+          <ul>
+            <li><span class="topic">Python stack (NumPy, Pandas)</span></li>
+            <li><span class="topic">Visualization (Matplotlib, Seaborn)</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>ML Basics</span>
+          <ul>
+            <li><span class="topic">Supervised/unsupervised</span></li>
+            <li><span class="topic">Model training/testing</span></li>
+            <li><span class="topic">Key algorithms (linear regression, k-means, decision trees)</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Intermediate</span>
+          <ul>
+            <li><span class="topic">Feature selection</span></li>
+            <li><span class="topic">Cross-validation</span></li>
+            <li><span class="topic">Model metrics</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Advanced</span>
+          <ul>
+            <li><span class="topic">Deep learning basics (neural nets)</span></li>
+            <li><span class="topic">Deployment</span></li>
+            <li><span class="topic">MLOps basics</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>Machine Learning (ML)</span>
+      <ul>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Fundamentals</span>
+          <ul>
+            <li><span class="topic">What is ML, types (supervised, unsupervised, reinforcement)</span></li>
+            <li><span class="topic">Workflow: data prep, modeling, evaluation</span></li>
+            <li><span class="topic">Data preprocessing</span></li>
+            <li><span class="topic">Overfitting/underfitting</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Algorithms</span>
+          <ul>
+            <li><span class="topic">Linear/logistic regression</span></li>
+            <li><span class="topic">Decision trees, random forests</span></li>
+            <li><span class="topic">KNN</span></li>
+            <li><span class="topic">SVM</span></li>
+            <li><span class="topic">Clustering (k-means, hierarchical)</span></li>
+            <li><span class="topic">PCA</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Model Evaluation</span>
+          <ul>
+            <li><span class="topic">Cross-validation</span></li>
+            <li><span class="topic">Confusion matrix, ROC, accuracy, precision, recall, F1</span></li>
+            <li><span class="topic">Hyperparameter tuning</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Tools</span>
+          <ul>
+            <li><span class="topic">scikit-learn</span></li>
+            <li><span class="topic">Jupyter</span></li>
+            <li><span class="topic">Model saving (pickle, joblib)</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li><span class="main toggle"><span class="arrow">&#9660;</span>Artificial Intelligence (AI)</span>
+      <ul>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Introduction</span>
+          <ul>
+            <li><span class="topic">What is AI</span></li>
+            <li><span class="topic">AI vs. ML vs. Deep Learning</span></li>
+            <li><span class="topic">Applications (NLP, vision, robotics)</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Core Concepts</span>
+          <ul>
+            <li><span class="topic">Search algorithms (BFS, DFS, heuristics)</span></li>
+            <li><span class="topic">Logic/reasoning</span></li>
+            <li><span class="topic">Knowledge representation</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>ML in AI</span>
+          <ul>
+            <li><span class="topic">ML integration</span></li>
+            <li><span class="topic">Reinforcement learning</span></li>
+            <li><span class="topic">NLP basics</span></li>
+            <li><span class="topic">Vision basics</span></li>
+          </ul>
+        </li>
+        <li><span class="sub toggle"><span class="arrow">&#9660;</span>Advanced</span>
+          <ul>
+            <li><span class="topic">Neural networks (CNN, RNN)</span></li>
+            <li><span class="topic">Generative models (GANs)</span></li>
+            <li><span class="topic">AI ethics</span></li>
+            <li><span class="topic">AI in real applications</span></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<script>
+  // Initialize tree collapsed (except first level) and arrow logic
+  document.querySelectorAll('.tree span.toggle').forEach(function(node) {
+    node.parentElement.classList.add('collapsed');
+    node.onclick = function(e) {
+      e.stopPropagation();
+      this.parentElement.classList.toggle('collapsed');
+    };
+  });
+  document.querySelectorAll('.tree>ul>li').forEach(function(node) {
+    node.classList.remove('collapsed');
+  });
+  // Highlight current selection
+  document.querySelectorAll('.tree .topic').forEach(function(node) {
+    node.onclick = function(e){
+      document.querySelectorAll('.tree .topic').forEach(function(n){n.classList.remove('selected');});
+      this.classList.add('selected');
+      e.stopPropagation();
+    }
+  });
+</script>
+</body>
+</html>
